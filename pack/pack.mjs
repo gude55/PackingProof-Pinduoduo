@@ -152,7 +152,7 @@ async function main() {
       console.warn(`警告：未找到 ${versionDocumentPath}，跳过 access 一致性比对`);
     }
 
-    validatePackage(output, schema, expected);
+    await validatePackage(output, schema, expected);
     console.log("官方 validatePackage 自检通过（Schema / 安装入口 / @version / access 一致性）");
   }
 }
