@@ -1,0 +1,49 @@
+{
+  "$schema": "https://packingproof.dev/schemas/package-manifest.v1.schema.json",
+  "access": {
+    "packingProofCapabilities": [
+      "order.lookup",
+      "refund.lookup"
+    ],
+    "packingProofPermissions": [
+      "scan-tasks.read",
+      "scan-results.write"
+    ],
+    "systemAccess": [
+      {
+        "id": "network",
+        "reason": "连接用户配置的 PackingProof 录像设备、扩展 API，并扫描局域网主机"
+      },
+      {
+        "id": "browser.page-data",
+        "reason": "读取拼多多打单页面中的订单、备注、商品和退款状态"
+      },
+      {
+        "id": "browser.storage",
+        "reason": "保存录像设备、上位机地址和扩展授权凭据"
+      },
+      {
+        "id": "clipboard",
+        "reason": "用户主动复制订单 JSON 时写入剪贴板"
+      }
+    ]
+  },
+  "compatibility": {
+    "minPackingProofVersion": "0.0.63",
+    "platforms": {
+      "userscript": [
+        "any"
+      ]
+    }
+  },
+  "format": "packingproof-extension",
+  "id": "gude55.pinduoduo-orders",
+  "installation": {
+    "mode": "userscript-import",
+    "payloadPath": "payload/main.user.js"
+  },
+  "packageFormatVersion": 1,
+  "schemaVersion": 1,
+  "type": "userscript",
+  "version": "3.6"
+}
